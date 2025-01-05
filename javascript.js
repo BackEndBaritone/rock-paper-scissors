@@ -20,19 +20,37 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
     if (humanSelection === "rock") {
-        (computerSelection === "scissors") ? alert("You win! Rock beats scissors.") : 
-        (computerSelection === "paper") ? alert("You lose! Paper beats rock.") : 
-        alert("It's a tie!");
+        if (computerSelection === "scissors") {
+            humanScore += 1;
+            alert("You win! Rock beats scissors");
+        } else if (computerSelection === "paper") {
+            computerScore += 1;
+            alert("You lose! Paper beats rock.");
+        } else {
+            alert("It's a tie!");
+        }
 
     } else if (humanSelection === "scissors") {
-        (computerSelection === "scissors") ? alert("It's a tie!") : 
-        (computerSelection === "paper") ? alert("You win! Scissors beats paper.") : 
-        alert("You lose! Rock beats scissors.");
+        if (computerSelection === "paper") {
+            humanScore += 1;
+            alert("You win! Scissors beats paper");
+        } else if (computerSelection === "rock") {
+            computerScore += 1;
+            alert("You lose! Rock beats scissors!");
+        } else {
+            alert("It's a tie!");
+        }
 
     } else if (humanSelection === "paper") {
-        (computerSelection === "scissors") ? alert("You lose! Scissors beats paper") : 
-        (computerSelection === "paper") ? alert("It's a tie!") : 
-        alert("You win! Paper beats rock.");
+        if (computerSelection === "rock") {
+            humanScore += 1;
+            alert("You win! Paper beats rocks");
+        } else if (computerSelection === "scissors") {
+            computerScore += 1;
+            alert("You lose! Scissors beats paper.");
+        } else {
+            alert("It's a tie!")
+        }
     }
 }
 
